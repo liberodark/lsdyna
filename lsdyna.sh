@@ -107,43 +107,43 @@ parse_args ()
                 shift
                 set_smp_d_931
                 session_lsdyna
-                exec screen -U -dmS "${whoami}"_"${date}" "${RUN_APP}" "$@"
+                run_lsdyna "$@"
                 ;;
             ssmp_1020)
                 shift
                 set_smp_s_1020
                 session_lsdyna
-                exec screen -U -dmS "${whoami}"_"${date}" "${RUN_APP}" "$@"
+                run_lsdyna "$@"
                 ;;
             dsmp_1020)
                 shift
                 set_smp_d_1020
                 session_lsdyna
-                exec screen -U -dmS "${whoami}"_"${date}" "${RUN_APP}" "$@"
+                run_lsdyna "$@"
                 ;;
             ssmp_1110)
                 shift
                 set_smp_s_1110
                 session_lsdyna
-                exec screen -U -dmS "${whoami}"_"${date}" "${RUN_APP}" "$@"
+                run_lsdyna "$@"
                 ;;
             dsmp_1110)
                 shift
                 set_smp_d_1110
                 session_lsdyna
-                exec screen -U -dmS "${whoami}"_"${date}" "${RUN_APP}" "$@"
+                run_lsdyna "$@"
                 ;;
             ssmp_1300)
                 shift
                 set_smp_s_1300
                 session_lsdyna
-                exec screen -U -dmS "${whoami}"_"${date}" "${RUN_APP}" "$@"
+                run_lsdyna "$@"
                 ;;
             dsmp_1300)
                 shift
                 set_smp_d_1300
                 session_lsdyna
-                exec screen -U -dmS "${whoami}"_"${date}" "${RUN_APP}" "$@"
+                run_lsdyna "$@"
                 ;;
             -h|--help)
                 usage
