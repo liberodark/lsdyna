@@ -5,7 +5,7 @@
 # Thanks : 
 # License: GPLv3
 
-version="0.0.4"
+version="0.0.5"
 
 echo "LSDyna use Script $version"
 
@@ -16,6 +16,7 @@ echo "LSDyna use Script $version"
 export LSTC_LICENSE=network
 export LSTC_LICENSE_SERVER=10.10.161.7
 export LSTC_LICENSE_SERVER_PORT=31010
+LSDYNA_DIR="/opt/lsdyna"
 whoami="$(whoami)"
 date=$(date +%Y.%m.%d_%H-%M-%S)
 
@@ -36,35 +37,51 @@ usage ()
 
 
 set_smp_d_611(){
-export RUN_APP="/opt/lsdyna/ls-dyna_smp_d_R6_1_1"
+    if test -e "${LSDYNA_DIR}/ls-dyna_smp_d_R6_1_1"; then
+        export RUN_APP="${LSDYNA_DIR}/ls-dyna_smp_d_R6_1_1"
+    fi
 }
 
 set_smp_d_931(){
-export RUN_APP="/opt/lsdyna/ls-dyna_smp_d_R9_3_1"
+    if test -e "${LSDYNA_DIR}/ls-dyna_smp_d_R9_3_1"; then
+        export RUN_APP="${LSDYNA_DIR}/ls-dyna_smp_d_R9_3_1"
+    fi
 }
 
 set_smp_s_1020(){
-export RUN_APP="/opt/lsdyna/ls-dyna_smp_s_R10_2_0"
+    if test -e "${LSDYNA_DIR}/ls-dyna_smp_s_R10_2_0"; then
+        export RUN_APP="${LSDYNA_DIR}/ls-dyna_smp_s_R10_2_0"
+    fi
 }
 
 set_smp_d_1020(){
-export RUN_APP="/opt/lsdyna/ls-dyna_smp_d_R10_2_0"
+    if test -e "${LSDYNA_DIR}/ls-dyna_smp_d_R10_2_0"; then
+        export RUN_APP="${LSDYNA_DIR}/ls-dyna_smp_d_R10_2_0"
+    fi
 }
 
 set_smp_s_1110(){
-export RUN_APP="/opt/lsdyna/ls-dyna_smp_s_R11_1_0"
+    if test -e "${LSDYNA_DIR}/ls-dyna_smp_s_R11_1_0"; then
+        export RUN_APP="${LSDYNA_DIR}/ls-dyna_smp_s_R11_1_0"
+    fi
 }
 
 set_smp_d_1110(){
-export RUN_APP="/opt/lsdyna/ls-dyna_smp_d_R11_1_0"
+    if test -e "${LSDYNA_DIR}/ls-dyna_smp_d_R11_1_0"; then
+        export RUN_APP="${LSDYNA_DIR}/ls-dyna_smp_d_R11_1_0"
+    fi
 }
 
 set_smp_s_1300(){
-export RUN_APP="/opt/lsdyna/ls-dyna_smp_s_R13_0_0"
+    if test -e "${LSDYNA_DIR}/ls-dyna_smp_s_R13_0_0"; then
+        export RUN_APP="${LSDYNA_DIR}/ls-dyna_smp_s_R13_0_0"
+    fi
 }
 
 set_smp_d_1300(){
-export RUN_APP="/opt/lsdyna/ls-dyna_smp_d_R13_0_0"
+    if test -e "${LSDYNA_DIR}/ls-dyna_smp_d_R13_0_0"; then
+        export RUN_APP="${LSDYNA_DIR}/ls-dyna_smp_d_R13_0_0"
+    fi
 }
 
 session_lsdyna(){
