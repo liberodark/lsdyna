@@ -5,7 +5,7 @@
 # Thanks : 
 # License: GPLv3
 
-version="0.0.6"
+version="0.0.7"
 
 echo "LSDyna use Script $version"
 
@@ -17,7 +17,7 @@ export LSTC_LICENSE=network
 export LSTC_LICENSE_SERVER=10.10.161.7
 export LSTC_LICENSE_SERVER_PORT=31010
 LSDYNA_DIR="/opt/lsdyna"
-LSDYNA_USER="lsdyna"
+#LSDYNA_USER="lsdyna"
 whoami="$(whoami)"
 date=$(date +%Y.%m.%d_%H-%M-%S)
 
@@ -25,14 +25,14 @@ usage ()
 {
      echo "usage: lsdyna dsmp_611 i=myfile.k ncpu=8 memory=1500M"
      echo "available versions :"
-     echo "dsmp_611: Use LSDyna SMP D R611"
-     echo "dsmp_931: Use LSDyna SMP D R931"
-     echo "ssmp_1020: Use LSDyna SMP S R1020"
-     echo "dsmp_1020: Use LSDyna SMP D R1020"
-     echo "ssmp_1110: Use LSDyna SMP S R1110"
-     echo "dsmp_1110: Use LSDyna SMP D R1110"
-     echo "ssmp_1300: Use LSDyna SMP S R1300"
-     echo "dsmp_1300: Use LSDyna SMP D R1300"
+     echo "dsmp_611 : Use LSDyna SMP D R611"
+     echo "dsmp_931 : Use LSDyna SMP D R931"
+     echo "ssmp_1020 : Use LSDyna SMP S R1020"
+     echo "dsmp_1020 : Use LSDyna SMP D R1020"
+     echo "ssmp_1110 : Use LSDyna SMP S R1110"
+     echo "dsmp_1110 : Use LSDyna SMP D R1110"
+     echo "ssmp_1300 : Use LSDyna SMP S R1300"
+     echo "dsmp_1300 : Use LSDyna SMP D R1300"
      echo "-h: Show help"
 }
 
@@ -90,7 +90,7 @@ echo "Your session is : ${whoami}_${date}"
 }
 
 run_lsdyna(){
-exec screen -U -dmS "${whoami}"_"${date}" "${RUN_APP}" "$@"
+exec screen -U -dmS "${whoami}"_"${date}" "${RUN_APP}" "$@" || echo "Error" && exit
 }
 
 parse_args ()
@@ -160,3 +160,5 @@ parse_args ()
     done
 
 }
+
+parse_args "$@"
