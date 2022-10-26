@@ -5,7 +5,7 @@
 # Thanks : 
 # License: GPLv3
 
-version="0.0.5"
+version="0.0.6"
 
 echo "LSDyna use Script $version"
 
@@ -17,6 +17,7 @@ export LSTC_LICENSE=network
 export LSTC_LICENSE_SERVER=10.10.161.7
 export LSTC_LICENSE_SERVER_PORT=31010
 LSDYNA_DIR="/opt/lsdyna"
+LSDYNA_USER="lsdyna"
 whoami="$(whoami)"
 date=$(date +%Y.%m.%d_%H-%M-%S)
 
@@ -159,5 +160,3 @@ parse_args ()
     done
 
 }
-
-parse_args "$@"
