@@ -5,7 +5,7 @@
 # Thanks : 
 # License: GPLv3
 
-version="0.0.8"
+version="0.0.9"
 
 echo "LSDyna use Script $version"
 
@@ -40,48 +40,72 @@ usage ()
 set_smp_d_611(){
     if test -e "${LSDYNA_DIR}/ls-dyna_smp_d_R6_1_1"; then
         export RUN_APP="${LSDYNA_DIR}/ls-dyna_smp_d_R6_1_1"
+    else
+        echo "Error file is not found : ${LSDYNA_DIR}/ls-dyna_smp_d_R6_1_1"
+        exit
     fi
 }
 
 set_smp_d_931(){
     if test -e "${LSDYNA_DIR}/ls-dyna_smp_d_R9_3_1"; then
         export RUN_APP="${LSDYNA_DIR}/ls-dyna_smp_d_R9_3_1"
+    else
+        echo "Error file is not found : ${LSDYNA_DIR}/ls-dyna_smp_d_R9_3_1"
+        exit
     fi
 }
 
 set_smp_s_1020(){
     if test -e "${LSDYNA_DIR}/ls-dyna_smp_s_R10_2_0"; then
         export RUN_APP="${LSDYNA_DIR}/ls-dyna_smp_s_R10_2_0"
+    else
+        echo "Error file is not found : ${LSDYNA_DIR}/ls-dyna_smp_s_R10_2_0"
+        exit
     fi
 }
 
 set_smp_d_1020(){
     if test -e "${LSDYNA_DIR}/ls-dyna_smp_d_R10_2_0"; then
         export RUN_APP="${LSDYNA_DIR}/ls-dyna_smp_d_R10_2_0"
+    else
+        echo "Error file is not found : ${LSDYNA_DIR}/ls-dyna_smp_d_R10_2_0"
+        exit
     fi
 }
 
 set_smp_s_1110(){
     if test -e "${LSDYNA_DIR}/ls-dyna_smp_s_R11_1_0"; then
         export RUN_APP="${LSDYNA_DIR}/ls-dyna_smp_s_R11_1_0"
+    else
+        echo "Error file is not found : ${LSDYNA_DIR}/ls-dyna_smp_s_R11_1_0"
+        exit
     fi
 }
 
 set_smp_d_1110(){
     if test -e "${LSDYNA_DIR}/ls-dyna_smp_d_R11_1_0"; then
         export RUN_APP="${LSDYNA_DIR}/ls-dyna_smp_d_R11_1_0"
+    else
+        echo "Error file is not found : ${LSDYNA_DIR}/ls-dyna_smp_d_R11_1_0"
+        exit
     fi
 }
 
 set_smp_s_1300(){
     if test -e "${LSDYNA_DIR}/ls-dyna_smp_s_R13_0_0"; then
         export RUN_APP="${LSDYNA_DIR}/ls-dyna_smp_s_R13_0_0"
+    else
+        echo "Error file is not found : ${LSDYNA_DIR}/ls-dyna_smp_s_R13_0_0"
+        exit
     fi
 }
 
 set_smp_d_1300(){
     if test -e "${LSDYNA_DIR}/ls-dyna_smp_d_R13_0_0"; then
         export RUN_APP="${LSDYNA_DIR}/ls-dyna_smp_d_R13_0_0"
+    else
+        echo "Error file is not found : ${LSDYNA_DIR}/ls-dyna_smp_d_R13_0_0"
+        exit
     fi
 }
 
