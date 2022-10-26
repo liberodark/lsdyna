@@ -5,7 +5,7 @@
 # Thanks : 
 # License: GPLv3
 
-version="0.0.7"
+version="0.0.8"
 
 echo "LSDyna use Script $version"
 
@@ -85,12 +85,20 @@ set_smp_d_1300(){
     fi
 }
 
-session_lsdyna(){
-echo "Your session is : ${whoami}_${date}"
+run_lsdyna(){
+    exec screen -U -dmS "${whoami}"_"${date}" "${RUN_APP}" "$@" | return 0
 }
 
-run_lsdyna(){
-exec screen -U -dmS "${whoami}"_"${date}" "${RUN_APP}" "$@" || echo "Error" && exit
+check_lsdyna(){
+echo "Please wait, We are trying to find your session" && sleep 5s
+
+    if screen -ls "${whoami}"_"${date}" > /dev/null 2>&1; then
+        echo "Your session is : ${whoami}_${date}"
+        exit
+    else
+        echo "Error no screen session is running"
+        exit
+    fi
 }
 
 parse_args ()
@@ -101,54 +109,53 @@ parse_args ()
             dsmp_611)
                 shift
                 set_smp_d_611
-                session_lsdyna
                 run_lsdyna "$@"
+                check_lsdyna
                 ;;
             dsmp_931)
                 shift
                 set_smp_d_931
-                session_lsdyna
                 run_lsdyna "$@"
+                check_lsdyna
                 ;;
             ssmp_1020)
                 shift
                 set_smp_s_1020
-                session_lsdyna
                 run_lsdyna "$@"
+                check_lsdyna
                 ;;
             dsmp_1020)
                 shift
                 set_smp_d_1020
-                session_lsdyna
                 run_lsdyna "$@"
+                check_lsdyna
                 ;;
             ssmp_1110)
                 shift
                 set_smp_s_1110
-                session_lsdyna
                 run_lsdyna "$@"
+                check_lsdyna
                 ;;
             dsmp_1110)
                 shift
                 set_smp_d_1110
-                session_lsdyna
                 run_lsdyna "$@"
+                check_lsdyna
                 ;;
             ssmp_1300)
                 shift
                 set_smp_s_1300
-                session_lsdyna
                 run_lsdyna "$@"
+                check_lsdyna
                 ;;
             dsmp_1300)
                 shift
                 set_smp_d_1300
-                session_lsdyna
                 run_lsdyna "$@"
+                check_lsdyna
                 ;;
             -h|--help)
                 usage
-                exit 0
                 ;;
             *)
                 echo "Invalid argument : ${1}" >&2
